@@ -1,23 +1,21 @@
-include "main.h"
+#include "main.h"
 
 /**
- *main - entry point
+ * main - Entry point
  *
- * Return: nothing. return viod
+ * Return: Always returns 0
+ *
  */
-
-int main(viod)
-	(
-	 _putchar('_');
-	 _putchar('p');
-	 _putchar('u');
-	 _putchar('t');
-	 _putchar('c');
-	 _putchar('h');
-	 _putchar('a');
-	 _putchar('r');
-	 -putchar('\n');
-
-	 return(0);
-	)
-
+int main(void)
+{
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
+}
