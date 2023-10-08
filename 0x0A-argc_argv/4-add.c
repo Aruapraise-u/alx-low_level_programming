@@ -1,42 +1,42 @@
-#include < stdio.h> 
-#include < stdlib.h> 
-#include < ctype.h>
-#include < string.h>
-int check_num(char *str) 
-{ 
-unsigned int count; 
-count = 0;
-while (count < strlen(str)) 
-{ 
-if (!isdigit(str[count])) 
-{
-return (0); 
-} 
-count++; 
-} 
-return (1); 
-}
-int main(int argc, char *argv[]) 
-{ 
-int count; 
-int str_to_int;
-int sum = 0; 
-   count = 1; 
-   while (count < argc) 
-  {  
-    if(check_num(argv[count])) 
-   { 
-      str_to_int = atoi(argv[count]); 
-      sum += str_to_int; 
-  } 
-  else 
-  { 
-       printf("Error\n"); 
-       return (1); 
-     }      
-      count++; 
-   }  
-     printf("%d\n", sum); 
-     return (0); 
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "main.h"
 
+/**
+ * main - Entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
+int main(int argc, char *argv[])
+{
+	int i, res, j;
+
+	if (argc == 1)
+	{
+		printf("%d\n", 0);
+		return (0);
+	}
+
+	res = 0;
+
+
+	for (i = 1; i < argc; i++)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
+		}
+		res += atoi(argv[i]);
+	}
+
+	printf("%d\n", res);
+	return (0);
+}
